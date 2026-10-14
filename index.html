@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Financial Intelligence Agent</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div>
+          <div class="brand">
+            <div class="brand-mark">F</div>
+            <div>
+              <h1>Finance AI</h1>
+            </div>
+          </div>
+          <nav class="nav-links">
+            <button class="nav-item active">Overview</button>
+            <button class="nav-item">Documents</button>
+            <button class="nav-item">Insights</button>
+            <button class="nav-item">Settings</button>
+          </nav>
+        </div>
+
+        <div class="upload-panel">
+          <h2>Upload report</h2>
+          <label class="upload-box" for="document-upload">
+            <span>Drop or select files</span>
+            <input id="document-upload" type="file" accept=".txt,.csv,.pdf" multiple />
+          </label>
+          <button id="upload-button" class="primary-button">Upload documents</button>
+        </div>
+      </aside>
+
+      <main class="main-panel">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Financial intelligence</p>
+            <h2>Executive overview</h2>
+          </div>
+          <div class="status-pill">Live knowledge base</div>
+        </header>
+
+        <section class="stats-grid">
+          <article class="stat-card">
+            <span class="stat-label">Indexed docs</span>
+            <strong id="docs-count">0</strong>
+          </article>
+          <article class="stat-card accent">
+            <span class="stat-label">Revenue</span>
+            <strong id="revenue-total">$0M</strong>
+          </article>
+          <article class="stat-card">
+            <span class="stat-label">Net margin</span>
+            <strong id="margin-rate">0%</strong>
+          </article>
+          <article class="stat-card">
+            <span class="stat-label">Growth</span>
+            <strong id="growth-rate">0%</strong>
+          </article>
+        </section>
+
+        <section class="content-grid">
+          <div class="panel chart-panel">
+            <div class="panel-header">
+              <h3>Revenue trend</h3>
+              <span>Q1–Q4</span>
+            </div>
+            <div class="chart-bars">
+              <span style="height: 42%"></span>
+              <span style="height: 56%"></span>
+              <span style="height: 68%"></span>
+              <span style="height: 82%"></span>
+            </div>
+          </div>
+
+          <div class="panel source-panel">
+            <div class="panel-header">
+              <h3>Source library</h3>
+              <span id="source-total">0 files</span>
+            </div>
+            <ul id="document-list" class="document-list"></ul>
+          </div>
+        </section>
+
+        <section class="panel assistant-panel">
+          <div class="panel-header assist-header">
+            <h3>Analyst assistant</h3>
+            <span>Grounded by stored evidence</span>
+          </div>
+
+          <div id="chat-log" class="chat-log">
+            <div class="message bot">
+              <p>Ask about revenue, margins, growth, or compare periods. I’ll use the uploaded documents and cite the source files.</p>
+            </div>
+          </div>
+
+          <form id="chat-form" class="chat-form">
+            <input id="question-input" type="text" placeholder="Ask a financial question..." />
+            <button type="submit" class="primary-button">Send</button>
+          </form>
+        </section>
+      </main>
+    </div>
+
+    <script src="/static/script.js"></script>
+  </body>
+</html>
